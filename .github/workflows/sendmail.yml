@@ -16,6 +16,5 @@ jobs:
       with: 
         python-version: "3.10"
     - uses: actions/checkout@v1
-    - uses: ./test1.py
     - name: sendmail
       run: pyton3 test1.py  
