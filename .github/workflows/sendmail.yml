@@ -8,12 +8,11 @@ on: [push]
 jobs:
   maill:
 
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-latest # 在ubantu下运行python
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
-      uses: actions/setup-python@v3
+    - uses: actions/setup-python@v3
       with: 
         python-version: "3.10"
     - uses: actions/checkout@v2
