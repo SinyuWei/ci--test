@@ -6,7 +6,7 @@ name: mail
 on: [push] 
 
 jobs:
-  build:
+  maill:
 
     runs-on: ubuntu-latest
 
