@@ -14,7 +14,6 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-    steps:
-     - run: actions/chekout@v1
-     - run: pyton3 tset1.py
+    - name: mail1
+    - run: actions/chekout@v1
+    - run: pyton3 tset1.py
