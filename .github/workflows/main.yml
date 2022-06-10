@@ -4,7 +4,6 @@ jobs:
    mail: 
     runs-on: ubantu-latest
     strategy:
-      fail-fast: false
       matrix:
         python-version: ["3.8", "3.9", "3.10"]
 
