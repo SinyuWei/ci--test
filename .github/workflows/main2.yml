@@ -1,19 +1,16 @@
-name: github-action-email
+name: GitHub Action Demo
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # 检出代码
-    - name: CheckoutRepo
-      uses: actions/checkout@v3
-    # 获取master分支上最新一条提交的git log  
-    - name: GetLastLog
+    - name: 'Checkout codes'
+      uses: actions/checkout@v1
+    - name: Get Git Log
       id: git_log
-      uses: SinyuWei/ci--test@main
-      #with:
-        #tag: origin/master
-    # 发送邮件    
+      uses: Edisonboy/latest-git-log-action@main
+      with:
+        tag: origin/master
     - name: Send email
       uses: dawidd6/action-send-mail@v3
       with:
@@ -23,5 +20,5 @@ jobs:
         password: ${{secrets.MAIL_PASSWORD}}
         subject: Github Actions job result
         to: ${{secrets.MAIL_TOUSERNAME}}
-        from: ${{secrets.MAIL_USERNAME}}
+        from: Luke Skywalker # <user@example.com>
         body: Build job of ${{github.repository}} completed successfully! ${{steps.git_log.outputs.log}}
